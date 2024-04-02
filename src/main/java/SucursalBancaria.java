@@ -6,6 +6,10 @@ public class SucursalBancaria {
 	public GestionBanco banco;
 	public ArrayList<CuentaBancaria> cuentasBancarias = new ArrayList<CuentaBancaria>();
 
+	public ArrayList<CuentaBancaria> getCuentasBancarias() {
+		return cuentasBancarias;
+	}
+
 	public int getCodigoSucursal() {
 		return this.codigoSucursal;
 	}
@@ -23,6 +27,7 @@ public class SucursalBancaria {
 	}
 
 	public SucursalBancaria(int codigoSucursal, int codigoPostal) {
-		throw new UnsupportedOperationException();
+		this.codigoSucursal = codigoSucursal;
+		this.codigoPostal = codigoPostal;
 	}
 }

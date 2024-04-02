@@ -5,6 +5,10 @@ public class Cliente {
 	public ArrayList<CuentaBancaria> cuentasBancarias = new ArrayList<CuentaBancaria>();
 	public GestionBanco banco;
 
+	public ArrayList<CuentaBancaria> getCuentasBancarias() {
+		return cuentasBancarias;
+	}
+
 	public String getNombre() {
 		return this.nombre;
 	}
@@ -14,6 +18,6 @@ public class Cliente {
 	}
 
 	public Cliente(String nombre) {
-		throw new UnsupportedOperationException();
+		this.nombre = nombre;
 	}
 }
