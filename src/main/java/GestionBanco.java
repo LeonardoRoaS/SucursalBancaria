@@ -1,11 +1,23 @@
-public class GestionBanco {
+import java.util.ArrayList;
 
-	public void agregarClientes() {
-		throw new UnsupportedOperationException();
+public class GestionBanco {
+	public ArrayList<SucursalBancaria> sucursalesBancarias = new ArrayList<SucursalBancaria>();
+	public ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+
+	public ArrayList<SucursalBancaria> getSucursalesBancarias() {
+		return sucursalesBancarias;
+	}
+	public ArrayList<Cliente> getClientes() {
+		return clientes;
 	}
 
-	public void agregarCuentaBancaria() {
-		throw new UnsupportedOperationException();
+
+	public void agregarClientes(Cliente cliente) {
+		this.clientes.add(cliente);
+	}
+
+	public void agregarCuentaBancaria(CuentaBancaria cuentaBancaria) {
+		throw new UnsupportedOperationException()	;
 	}
 
 	public void verCuentasCliente() {

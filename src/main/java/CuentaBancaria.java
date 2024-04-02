@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public abstract class CuentaBancaria {
 	private int numeroCuenta;
 	private Date fechaApertura;
@@ -33,7 +35,19 @@ public abstract class CuentaBancaria {
 		this.saldo = saldo;
 	}
 
+	public SucursalBancaria getSucursal() {
+		return sucursal;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
 	public CuentaBancaria(int numeroCuenta, Cliente cliente, SucursalBancaria sucursalBancaria) {
-		throw new UnsupportedOperationException();
+		this.numeroCuenta = numeroCuenta;
+		this.fechaApertura = new Date();
+		this.saldo = 0;
+		this.cliente = cliente;
+		this.sucursal = sucursalBancaria;
 	}
 }

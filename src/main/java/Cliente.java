@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Cliente {
 	private String nombre;
 	public ArrayList<CuentaBancaria> cuentasBancarias = new ArrayList<CuentaBancaria>();
+	public GestionBanco banco;
 
 	public String getNombre() {
 		return this.nombre;

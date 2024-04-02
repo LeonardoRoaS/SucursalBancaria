@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class SucursalBancaria {
 	private int codigoSucursal;
 	private int codigoPostal;
+	public GestionBanco banco;
 	public ArrayList<CuentaBancaria> cuentasBancarias = new ArrayList<CuentaBancaria>();
 
 	public int getCodigoSucursal() {

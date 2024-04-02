@@ -10,14 +10,16 @@ public class CuentaAhorro extends CuentaBancaria {
 	}
 
 	public CuentaAhorro(int numeroCuenta, double reajusteAnual, Cliente cliente, SucursalBancaria sucursalBancaria) {
-		throw new UnsupportedOperationException();
+		super(numeroCuenta, cliente, sucursalBancaria);
+		this.reajusteAnual = reajusteAnual;
 	}
 
 	public String getTipo() {
-		throw new UnsupportedOperationException();
+		return "Cuenta Ahorro";
 	}
 
 	public void mostrarDetallesCuenta() {
-		throw new UnsupportedOperationException();
+		String detalleCuenta = "Cliente :"+super.getCliente().getNombre()+" "+this.getTipo()+" Numero Cuenta: "+super.getNumeroCuenta()+" Sueldo: "+super.getSaldo()+" Reajuste: "+this.getReajusteAnual();
+		System.out.println(detalleCuenta);
 	}
 }

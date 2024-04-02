@@ -10,14 +10,16 @@ public class CuentaCorriente extends CuentaBancaria {
 	}
 
 	public String getTipo() {
-		throw new UnsupportedOperationException();
+		return "Cuenta Corriente";
 	}
 
 	public CuentaCorriente(int numeroCuenta, int lineaSobregiro, Cliente cliente, SucursalBancaria sucursalBancaria) {
-		throw new UnsupportedOperationException();
+		super(numeroCuenta, cliente, sucursalBancaria);
+		this.lineaSobregiro = lineaSobregiro;
 	}
 
 	public void mostrarDetallesCuenta() {
-		throw new UnsupportedOperationException();
+		String detalleCuenta = "Cliente: "+super.getCliente().getNombre()+" "+this.getTipo()+"Numero Cuenta: "+super.getNumeroCuenta()+" Sueldo: "+super.getSaldo()+" Linea sobregiro: "+this.lineaSobregiro;
+		System.out.println(detalleCuenta);
 	}
 }
