@@ -19,10 +19,12 @@ public class GestionBanco {
 
 
 	public void agregarClientes(Cliente cliente) {
+		//Agregando cliente
 		this.clientes.add(cliente);
 	}
 
 	public void agregarSucursalBancaria(SucursalBancaria sucursalBancaria){
+		//Agregando sucursal
 		this.sucursalesBancarias.add(sucursalBancaria);
 	}
 
@@ -41,20 +43,29 @@ public class GestionBanco {
 		}
 	}
 
-	public void obtenerCuentasAhorro(SucursalBancaria sucursalBancaria) {
-
+	public List<CuentaAhorro> obtenerCuentasAhorro(SucursalBancaria sucursalBancaria) {
+		List<CuentaAhorro> cuentasAhorro = new ArrayList<CuentaAhorro>();
 		for(CuentaBancaria cuentaBancaria : sucursalBancaria.getCuentasBancarias()){
 			if (cuentaBancaria.getTipo().equalsIgnoreCase("Cuenta Ahorro")){
-				System.out.println(cuentaBancaria+"ACA");
+				cuentasAhorro.add((CuentaAhorro) cuentaBancaria);
 			}
 		}
+		return cuentasAhorro;
 	}
 
-	public void obtenerCuentasCorriente() {
-		throw new UnsupportedOperationException();
+	public List<CuentaCorriente> obtenerCuentasCorriente(SucursalBancaria sucursalBancaria) {
+		List<CuentaCorriente> cuentasCorriente = new ArrayList<CuentaCorriente>();
+		for (CuentaBancaria cuentaBancaria : sucursalBancaria.getCuentasBancarias()){
+			if (cuentaBancaria.getTipo().equalsIgnoreCase("Cuenta Corriente")){
+				cuentasCorriente.add((CuentaCorriente) cuentaBancaria);
+			}
+		}
+		return cuentasCorriente;
+
 	}
 
 	public Cliente buscarCliente(String nombre){
+		//Buscar cliente por nombre y regresar el Cliente
 		for (Cliente cliente : this.clientes){
 			if (cliente.getNombre().equalsIgnoreCase(nombre)){
 				return cliente;
