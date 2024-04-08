@@ -7,7 +7,7 @@ public class GestionBanco {
 
 	public GestionBanco(){
 		this.clientes = new ArrayList<Cliente>();
-		this.sucursalesBancarias = new Arraylist<SucursalBancaria>();
+		this.sucursalesBancarias = new ArrayList<SucursalBancaria>();
 	}
 
 	public ArrayList<SucursalBancaria> getSucursalesBancarias() {
@@ -26,16 +26,28 @@ public class GestionBanco {
 		this.sucursalesBancarias.add(sucursalBancaria);
 	}
 
-	public void agregarCuentaBancaria(CuentaBancaria cuentaBancaria) {
-		throw new UnsupportedOperationException();
+	public void agregarCuentaBancaria(CuentaBancaria cuentaBancaria, Cliente cliente, SucursalBancaria sucursalBancaria) {
+		//agrego una cuenta al cliente
+		cliente.getCuentasBancarias().add(cuentaBancaria);
+
+		//agrego la cuenta bancaria a una sucursal del banco
+		sucursalBancaria.getCuentasBancarias().add(cuentaBancaria);
 	}
 
-	public void verCuentasCliente() {
-		throw new UnsupportedOperationException();
+	public void verCuentasCliente(Cliente cliente) {
+		//Se muestra las cuentas bancarias del cliente asociado
+		for (CuentaBancaria cuentaBancaria : cliente.getCuentasBancarias()){
+			cuentaBancaria.mostrarDetallesCuenta();
+		}
 	}
 
-	public void obtenerCuentasAhorro() {
-		throw new UnsupportedOperationException();
+	public void obtenerCuentasAhorro(SucursalBancaria sucursalBancaria) {
+
+		for(CuentaBancaria cuentaBancaria : sucursalBancaria.getCuentasBancarias()){
+			if (cuentaBancaria.getTipo().equalsIgnoreCase("Cuenta Ahorro")){
+				System.out.println(cuentaBancaria);
+			}
+		}
 	}
 
 	public void obtenerCuentasCorriente() {
