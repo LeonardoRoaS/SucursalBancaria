@@ -19,7 +19,7 @@ public class CuentaAhorro extends CuentaBancaria {
 	}
 
 	public void mostrarDetallesCuenta() {
-		String detalleCuenta = "Cliente :"+super.getCliente().getNombre()+" "+this.getTipo()+" Numero Cuenta: "+super.getNumeroCuenta()+" Sueldo: "+super.getSaldo()+" Reajuste: "+this.getReajusteAnual();
+		String detalleCuenta = "Cliente :"+super.getCliente().getNombre()+" "+this.getTipo()+" |Numero Cuenta: "+super.getNumeroCuenta()+" |Sueldo: "+super.getSaldo()+" |Reajuste: "+this.getReajusteAnual();
 		System.out.println(detalleCuenta);
 	}
 }

@@ -19,7 +19,7 @@ public class CuentaCorriente extends CuentaBancaria {
 	}
 
 	public void mostrarDetallesCuenta() {
-		String detalleCuenta = "Cliente: "+super.getCliente().getNombre()+" "+this.getTipo()+"Numero Cuenta: "+super.getNumeroCuenta()+" Sueldo: "+super.getSaldo()+" Linea sobregiro: "+this.lineaSobregiro;
+		String detalleCuenta = "Cliente: "+super.getCliente().getNombre()+" "+this.getTipo()+" |Numero Cuenta: "+super.getNumeroCuenta()+" |Sueldo: "+super.getSaldo()+" |Linea sobregiro: "+this.lineaSobregiro;
 		System.out.println(detalleCuenta);
 	}
 }

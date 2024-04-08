@@ -45,12 +45,21 @@ public class GestionBanco {
 
 		for(CuentaBancaria cuentaBancaria : sucursalBancaria.getCuentasBancarias()){
 			if (cuentaBancaria.getTipo().equalsIgnoreCase("Cuenta Ahorro")){
-				System.out.println(cuentaBancaria);
+				System.out.println(cuentaBancaria+"ACA");
 			}
 		}
 	}
 
 	public void obtenerCuentasCorriente() {
 		throw new UnsupportedOperationException();
+	}
+
+	public Cliente buscarCliente(String nombre){
+		for (Cliente cliente : this.clientes){
+			if (cliente.getNombre().equalsIgnoreCase(nombre)){
+				return cliente;
+			}
+		}
+		return null;
 	}
 }
