@@ -43,25 +43,22 @@ public class GestionBanco {
 		}
 	}
 
-	public List<CuentaAhorro> obtenerCuentasAhorro(SucursalBancaria sucursalBancaria) {
-		List<CuentaAhorro> cuentasAhorro = new ArrayList<CuentaAhorro>();
+	public void obtenerCuentasAhorro(SucursalBancaria sucursalBancaria) {
+		System.out.println("Cuentas Ahorro: ");
 		for(CuentaBancaria cuentaBancaria : sucursalBancaria.getCuentasBancarias()){
 			if (cuentaBancaria.getTipo().equalsIgnoreCase("Cuenta Ahorro")){
-				cuentasAhorro.add((CuentaAhorro) cuentaBancaria);
+				cuentaBancaria.mostrarDetallesCuenta();
 			}
 		}
-		return cuentasAhorro;
 	}
 
-	public List<CuentaCorriente> obtenerCuentasCorriente(SucursalBancaria sucursalBancaria) {
-		List<CuentaCorriente> cuentasCorriente = new ArrayList<CuentaCorriente>();
+	public void obtenerCuentasCorriente(SucursalBancaria sucursalBancaria) {
+		System.out.println("Cuentas Corriente: ");
 		for (CuentaBancaria cuentaBancaria : sucursalBancaria.getCuentasBancarias()){
 			if (cuentaBancaria.getTipo().equalsIgnoreCase("Cuenta Corriente")){
-				cuentasCorriente.add((CuentaCorriente) cuentaBancaria);
+				cuentaBancaria.mostrarDetallesCuenta();
 			}
 		}
-		return cuentasCorriente;
-
 	}
 
 	public Cliente buscarCliente(String nombre){
